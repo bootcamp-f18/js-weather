@@ -5,6 +5,12 @@ let appId = '58e92c763df5499a2c9ae20da806e2dc';
 let apiRequest = new XMLHttpRequest();
 let output = document.getElementById('output');
 let error = document.getElementById('error');
+let output_city = document.getElementById('output-city');
+let output_condition = document.getElementById('output-condition');
+let output_c = document.getElementById('output-c');
+let output_f = document.getElementById('output-f');
+let output_k = document.getElementById('output-k');
+let output_image = document.getElementById('output-image');
 
 
 document.onreadystatechange = function () {
@@ -26,21 +32,10 @@ function getWeather() {
     apiRequest.open('get', url, true);
     apiRequest.send();
 
-    // Fill in the page
-
-
-
-
 }
 
 
 function onError() {
-
-    // Turn "off" output
-    output.style.display = 'none';
-
-    // Turn "on" error
-    error.style.display = 'block';
 
     // Update the text inside error
     if (apiRequest.responseText) {
@@ -50,8 +45,11 @@ function onError() {
         document.querySelector('#error div').innerHTML = "An error has occurred. Please try again.";
     }
 
-    // responseText.message
+    // Turn "off" output
+    output.style.display = 'none';
 
+    // Turn "on" error
+    error.style.display = 'block';
 
 }
 
@@ -59,13 +57,44 @@ function onSuccess() {
 
     if (apiRequest.status == "200") {
 
-        console.log("Request should return good data.");
+        let response = JSON.parse(apiRequest.responseText);
 
-        // Start filling out the output div.
+        output_city.innerHTML = response.name;
+        output_condition.innerHTML = response.weather[0].description;
+        output_k.innerHTML = Math.round(response.main.temp) + ' K';
+        output_c.innerHTML = Math.round(KtoC(response.main.temp)) + ' C';
+        output_f.innerHTML = Math.round(KtoF(response.main.temp)) + ' F';
+        output_image.src = decideImage(response.main.temp);
+
+        // Turn "off" error
+        error.style.display = 'none';
+
+        // Turn "on" output
+        output.style.display = 'block';
 
     }
     else {
         onError();
     }
+
+}
+
+function KtoC(tempK) {
+    return tempK - 273.15;
+}
+
+function KtoF(tempK) {
+    return (tempK * 9/5) - 459.67;
+}
+
+function decideImage(tempK) {
+
+    if (tempK > 294) { // HOT!
+        return "https://i.ytimg.com/vi/PR2XYraqyqs/maxresdefault.jpg";
+    }
+    else if (tempK < 285) { // COLD!
+        return "https://i.ytimg.com/vi/YH4Xr6GIp4U/maxresdefault.jpg";
+    }
+    return "https://i.ytimg.com/vi/LML6SoNE7xE/hqdefault.jpg";
 
 }
