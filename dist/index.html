@@ -10,7 +10,67 @@
     <title>JavaScript Weather App</title>
   </head>
   <body class="container">
-    <h1>JavaScript Weather App</h1>
+    <h1 class="text-center mb-4 mt-3">JavaScript Weather App</h1>
+
+    <form class="text-center mb-5">
+      <div class="form-row justify-content-center">
+        <div class="col-auto">
+          <label class="sr-only" for="zipcodeInput">Zip Code</label>
+          <input type="text" class="form-control mb-2" id="zipcodeInput" placeholder="Enter zipcode...">
+        </div>
+        <div class="col-auto">
+          <button id="weatherButton" type="button" class="btn btn-primary mb-2">Submit</button>
+        </div>
+      </div>
+    </form>
+
+<div id="error">
+    <div class="alert alert-info text-center"></div>
+</div>
+
+<div id="output">
+    <div class="card mb-5">
+      <div class="card-header text-center bg-secondary">
+        <span class="halloween-card-header">City</span>
+      </div>
+      <div class="card-body">
+        <p id="output-city" class="card-text text-center"></p>
+      </div>
+    </div>
+
+    <div class="card mb-5">
+      <div class="card-header text-center bg-secondary">
+          <span class="halloween-card-header">Temperature</span>
+      </div>
+      <div class="card-body p-0">
+        <div class="row card-text text-center">
+            <div id="output-k" class="col border-right p-3"></div>
+            <div id="output-f" class="col border-right p-3"></div>
+            <div id="output-c" class="col p-3"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-5">
+      <div class="card-header text-center bg-secondary">
+          <span class="halloween-card-header">Condition</span>
+      </div>
+      <div class="card-body">
+        <p id="output-condition" class="card-text text-center"></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header text-center bg-secondary">
+          <span class="halloween-card-header">Seasonal Image</span>
+      </div>
+      <div class="card-body">
+        <img src="" class="img-fluid" id="output-image">
+      </div>
+    </div>
+</div>
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
