@@ -48,10 +48,13 @@ function onError() {
   //Turn on the error div
   error.style.display = 'block';
   // Update the text inside error
-  document.querySelector('#error div').innerHTML = "An error has occurred. Please try again";
+  if (apiRequest.responseText) {
+    document.querySelector('#error div').innerHTML = JSON.parse(apiRequest.responseText).message;
+  }
 
-
-}
+    else {
+          document.querySelector('#error div').innerHTML = "An error has occurred. Please try again";
+  }
 
 function on onSuccess() {
  if(apiRequest.statusText == "200") {
