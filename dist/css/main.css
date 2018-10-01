@@ -8610,5 +8610,24 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.halloween-card-header {
+  font-weight: bold;
+  color: #007bff;
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+body {
+  max-width: 500px !important;
+}
+
+#output {
+  display: none;
+}
+
+#error {
+  display: none;
+}
 
 /*# sourceMappingURL=main.css.map */
