@@ -11,6 +11,69 @@
   </head>
   <body class="container">
 
+    <h1 class="text-center mb-4 mt-3">JavaScript Weather App</h1>
+
+    <form class="text-center mb-5">
+      <div class="form-row justify-content-center">
+        <div class="col-auto">
+          <label class="sr-only" for="inlineFormInput">Zip Code</label>
+          <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="40507">
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-2">Submit</button>
+        </div>
+      </div>
+    </form>
+
+<div id="error">
+    <div class="alert alert-info text-center">Please input a valid zip code!</div>
+</div>
+
+<div id="output">
+    <div class="card mb-5">
+      <div class="card-header text-center bg-secondary">
+        <span class="halloween-card-header">City</span>
+      </div>
+      <div class="card-body">
+        <p class="card-text text-center">Lexington KY</p>
+      </div>
+    </div>
+
+    <div class="card mb-5">
+      <div class="card-header text-center bg-secondary">
+          <span class="halloween-card-header">Temperature</span>
+      </div>
+      <div class="card-body p-0">
+        <div class="row card-text text-center">
+            <div class="col border-right p-3">123 K</div>
+            <div class="col border-right p-3">32 F</div>
+            <div class="col p-3">-9 C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-5">
+      <div class="card-header text-center bg-secondary">
+          <span class="halloween-card-header">Condition</span>
+      </div>
+      <div class="card-body">
+        <p class="card-text text-center">Better not be rain</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header text-center bg-secondary">
+          <span class="halloween-card-header">Seasonal Image</span>
+      </div>
+      <div class="card-body">
+        <p class="card-text text-center">Picture of something representing "warm"</p>
+      </div>
+    </div>
+</div>
+
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

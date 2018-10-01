@@ -13,6 +13,17 @@ $gray-900: #212529;
 $black:    #000;
 
 
+$body-bg:       $gray-200;
+$body-color:    $gray-900;
+
+$primary:       #f75f1c; // orange
+$secondary:     #000; //black
+$success:       #85e21f; // green
+$info:          #881ee4; // purple
+$warning:       #ff9a00; //
+// $danger:        $red ; //
+
+
 // Bootstrap and its default variables
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
