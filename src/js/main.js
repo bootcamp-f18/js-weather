@@ -22,7 +22,7 @@ document.onreadystatechange = function () {
 function getWeather() {
 
     // Format a url
-    let url = 'http://api.openweathermap.org/data/2.5/weather?zip=<zipcode>,us&appid=<appid>';
+    let url = 'https://api.openweathermap.org/data/2.5/weather?zip=<zipcode>,us&appid=<appid>';
     url = url.replace("<zipcode>", zipcode.value);
     url = url.replace("<appid>", appId);
 
